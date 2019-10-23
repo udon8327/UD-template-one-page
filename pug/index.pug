@@ -1,37 +1,32 @@
-extends _layout.pug
+doctype html
+html(lang='zh-Hant-TW')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='viewport' content='width=device-width initial-scale=1 shrink-to-fit=no')
+		meta(name="format-detection" content="telephone=no")
+		meta(name='description' content='網頁描述')
+		meta(name='keywords' content='網頁關鍵字')
+		meta(name='author' content='Bohan Huang')
+		link(href='./img/favicon.ico' rel='shortcut icon')
+		title 首頁
+		link(href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css' rel='stylesheet')
+		link(href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet')
+		link(href='./css/layout.css' rel='stylesheet')
+		link(href='./css/index.css' rel='stylesheet')
+		|
+		| <!--[if lt IE 9]>
+		|   <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		|   <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		| <![endif]-->
 
-block var
-	-var url = ''
-	-var link = 'html/'
+	body
+		header
+		main
+		footer
 
-block title
-	title 首頁
-
-block css
-	link(href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' rel='stylesheet')
-	link(href='css/index.css?v=1' rel='stylesheet')
-
-block js
-	script(src="plugins/jquery-validate-1.19.0/jquery.validate.min.js")
-	script(src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js")
-	script(src="plugins/chart-2.8.0/Chart.bundle.min.js")
-	script(src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
-	script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js')
-
-//---------------------------內容區Start---------------------------
-block content
-	#gacha
-		.bg
-			.lotterybg
-				canvas#myCanvas(width='285px', height='170px')
-				//- img.lighting(src='img/lighting.png')
-		img#start(src='img/start_btn.png', onclick='play()')
-		.award
-			span#awardBall
-		img#ball1.imgSrc(src='img/1.png')
-		img#ball2.imgSrc(src='img/2.png')
-		img#ball3.imgSrc(src='img/3.png')
-		img#ball4.imgSrc(src='img/4.png')
-
-
-//---------------------------內容區End---------------------------
+		//-script
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js')
+		script(src='./js/index.js')
