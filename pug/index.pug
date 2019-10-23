@@ -1,0 +1,37 @@
+extends _layout.pug
+
+block var
+	-var url = ''
+	-var link = 'html/'
+
+block title
+	title 首頁
+
+block css
+	link(href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css' rel='stylesheet')
+	link(href='css/index.css?v=1' rel='stylesheet')
+
+block js
+	script(src="plugins/jquery-validate-1.19.0/jquery.validate.min.js")
+	script(src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js")
+	script(src="plugins/chart-2.8.0/Chart.bundle.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js')
+
+//---------------------------內容區Start---------------------------
+block content
+	#gacha
+		.bg
+			.lotterybg
+				canvas#myCanvas(width='285px', height='170px')
+				//- img.lighting(src='img/lighting.png')
+		img#start(src='img/start_btn.png', onclick='play()')
+		.award
+			span#awardBall
+		img#ball1.imgSrc(src='img/1.png')
+		img#ball2.imgSrc(src='img/2.png')
+		img#ball3.imgSrc(src='img/3.png')
+		img#ball4.imgSrc(src='img/4.png')
+
+
+//---------------------------內容區End---------------------------

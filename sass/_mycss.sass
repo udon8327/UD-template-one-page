@@ -1,0 +1,283 @@
+@import "_color.sass"
+
+/* * */
+*,::after,::before
+  box-sizing: border-box
+
+/*html*/
+html
+  height: 100%
+
+/*body*/
+body
+  font-family: "Helvetica Neue", Helvetica, "PingFang TC", "LiHei Pro", "Hiragino Sans GB", "Microsoft JhengHei", "微軟正黑體", Arial ,sans-serif
+  color: #333
+  overflow-x: hidden
+  height: 100%
+
+/*img*/
+.img-r
+  display: block
+  width: 100%
+  height: auto
+
+/*padding*/
+.px-10
+  padding: 0 10px !important
+.px-15
+  padding: 0 15px !important
+
+/*margin-bottom*/
+.mb-10
+  margin-bottom: 10px !important
+.mb-15
+  margin-bottom: 15px !important
+.mb-20
+  margin-bottom: 20px !important
+.mb-25
+  margin-bottom: 25px !important
+.mb-30
+  margin-bottom: 30px !important
+.mb-40
+  margin-bottom: 40px !important
+.mb-50
+  margin-bottom: 50px !important
+.mb-100
+  margin-bottom: 100px !important
+
+/*transform*/
+.tt-1
+  transform: translateY(-1px) !important
+.tt-2
+  transform: translateY(-2px) !important
+.tt-3
+  transform: translateY(-3px) !important
+.tb-1
+  transform: translateY(1px) !important
+.tb-2
+  transform: translateY(2px) !important
+.tb-3
+  transform: translateY(3px) !important
+.tr-1
+  transform: translateX(1px) !important
+.tr-2
+  transform: translateX(2px) !important
+.tr-3
+  transform: translateX(3px) !important
+.tl-1
+  transform: translateX(-1px) !important
+.tl-2
+  transform: translateX(-2px) !important
+.tl-3
+  transform: translateX(-3px) !important
+
+/*background-color*/
+.bc-1
+  background-color: rgba(red,0.2) !important
+.bc-2
+  background-color: rgba(blue,0.2) !important
+.bc-3
+  background-color: rgba(green,0.2) !important
+.bc-4
+  background-color: rgba(yellow,0.2) !important
+.bc-5
+  background-color: rgba(aqua,0.2) !important
+.bc-6
+  background-color: rgba(black,0.2) !important
+
+/*a*/
+a
+  color: $coolbeSub
+  text-decoration: none
+  transition: all 0.2s ease
+  &:hover
+    color: $coolbeMain
+    text-decoration: none
+  &:focus
+    color: $coolbeMain
+    text-decoration: none
+    outline: 5px auto -webkit-focus-ring-color
+    outline-offset: -2px
+
+/*hr*/
+hr
+  margin-top: 10px
+  margin-bottom: 10px
+  border: 0
+  border-top: 1px solid #eeeeee
+
+/*ul*/
+ul
+  list-style: none
+
+/*form*/
+// input.form-control,select.form-control
+//   border: 1px solid #aaa !important
+
+/*gototop*/
+#gotop
+  display: none
+  position: fixed
+  right: 20px
+  bottom: 20px
+  width: 60px
+  height: 60px
+  font-size: 20px
+  background: rgba(#000, 0.2)
+  color: white
+  cursor: pointer
+  z-index: 500
+  border-radius: 50px
+  transition: background-color 0.2s ease
+  @media (max-width:767px)
+    width: 50px
+    height: 50px
+    font-size: 18px
+  i
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+  &:hover
+    background-color: rgba(#000, 0.4)
+    @media (max-width:767px)
+      background-color: rgba(#000, 0.2)
+
+/*youtube rwd*/
+.video-container
+  position: relative
+  padding-bottom: 56.25%
+  padding-top: 30px
+  height: 0
+  overflow: hidden
+  iframe, object, embed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+/*logo*/
+.logo
+  width: 300px
+  height: 108px
+  background: url('../img/logo.png') no-repeat
+  margin: 0
+  overflow: hidden
+  text-indent: 100%
+  white-space: nowrap
+  a
+    display: block
+    width: 100%
+    height: 100%
+
+/*clearfix*/
+.clearfix
+  *zoom: 1
+  &::after
+    clear: both
+    content: ""
+    display: block
+    height: 0
+    visibility: hidden
+
+/*modal彈出視窗*/
+.modal
+  height: 100vh
+  width: 100vw
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 1000
+  .modalContent
+    background-color: #fff
+    height: 90vh
+    width: 90vw
+    position: fixed
+    padding: 15px
+    //border-radius: 6px
+    overflow: auto
+    animation-duration: 0.4s
+    box-shadow: 0px 10px 20px 0px rgba(#000,0.2)
+    @media (min-width:900px)
+      max-width: 500px
+      height: 75vh
+    .modalClose
+      position: absolute
+      top: 8px
+      font-size: 22px
+      right: 10px
+      color: rgba(#000,0.3)
+      cursor: pointer
+      transition: all 0.2s ease
+      &:hover
+        transform: scale(1.3)
+    h5
+      font-size: 18px
+      font-weight: bold
+    button
+      background-color: $dark
+      cursor: pointer
+      border: none
+      color: #fff
+      border-radius: 4px
+      border: 1px solid $dark
+      padding: 10px 30px
+      transition: all 0.2s ease
+      &:hover
+        background-color: darken($dark,5%)
+      &.cancel
+        background-color: #fff
+        border: 1px solid $dark
+        color: $dark
+        &:hover
+          background-color: darken(#fff,5%)
+  .modalBg
+    background-color: rgba(#000,0.4)
+    width: 100vw
+    height: 100vh
+
+
+.modalConfirm
+  z-index: 1100
+  .modalContent
+    height: auto
+    width: 90vw
+  p#fail,p#success
+    font-weight: bold
+    font-size: 16px
+  p#fail
+    color: red
+  p#success
+    color: green
+
+/*jquery validate.js表單驗證*/
+label
+  white-space: nowrap
+
+input.error
+  border: 1px solid $red
+  margin-bottom: 10px
+
+label.error
+  padding-left: 6px
+  font-size: 14px
+  line-height: 14px
+  font-weight: bold
+  margin: 0
+  color: $red
+  position: absolute
+  bottom: -9px
+
+/*select右側箭頭自訂*/
+select
+  background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 95% 50%
+  /*禁止ios設備的select預設樣式*/
+  appearance: none
+
+/*custom-control單多選框自訂*/
+.custom-control-input
+  &:checked ~ .custom-control-label::before
+    color: #fff
+    border-color: #333
+    background-color: #333
